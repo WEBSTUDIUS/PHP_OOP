@@ -4,6 +4,8 @@ require_once 'classes/Car.php';
 require_once 'classes/Debug.php';
 require_once 'classes/File.php';
 require_once 'classes/Product.php';
+require_once 'classes/NotebookProduct.php';
+require_once 'classes/BookProduct.php';
 
 ?>
 <!DOCTYPE html>
@@ -36,11 +38,16 @@ require_once 'classes/Product.php';
     <hr>
     <h1>MY PRODUCTS</h1>
     <?
-        $notebook = new Product("MacBook Pro 16", "1000$", "Intel Core i7-11654");
+//        $notebook = new Product("MacBook Pro 16", "1000$", "Intel Core i7-11654"); // make MAIN class
+//        $notebook = new Product("MacBook Pro 16", "1000$");
+    $notebook = new NotebookProduct("MacBook Pro 16", "1000$", 'Intel');
         echo $notebook->getProduct("notebook");
+//        Debug::printer($notebook);
 
-        $book1 = new Product("Book 1", "10$", false ,"900");
-        echo $book1->getProduct("book1");
+//        $book1 = new Product("Book 1", "10$", false ,"900");   // make MAIN class
+//        $book1 = new Product("Book 1", "10$");
+    $book1 = new BookProduct("Book 1", "10$", '900');
+          echo $book1->getProduct("book1");
     ?>
 </body>
 </html>
