@@ -8,6 +8,7 @@ class NotebookProduct extends Product
     {
         parent::__construct($name, $price);
         $this->cpu = $cpu;
+        $this->setDiscount(50);
     }
 
     /**

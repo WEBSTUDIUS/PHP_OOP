@@ -38,13 +38,16 @@ require_once 'classes/BookProduct.php';
     <hr>
     <h1>MY PRODUCTS</h1>
     <?
-//        $notebook = new Product("MacBook Pro 16", "1000$", "Intel Core i7-11654"); // make MAIN class
+//        $notebook = new Product("MacBook Pro 16", "1000$", "Intel Core i7-11654"); // Not for MAIN class
 //        $notebook = new Product("MacBook Pro 16", "1000$");
     $notebook = new NotebookProduct("MacBook Pro 16", "1000$", 'Intel');
         echo $notebook->getProduct("notebook");
-//        Debug::printer($notebook);
+//        $notebook->dicount = 50; // DOESNT WORK )
+//    $notebook->setDiscount(100); // DOESNT WORK )
 
-//        $book1 = new Product("Book 1", "10$", false ,"900");   // make MAIN class
+//    Debug::printer($notebook);
+
+//        $book1 = new Product("Book 1", "10$", false ,"900");   // Not for MAIN class
 //        $book1 = new Product("Book 1", "10$");
     $book1 = new BookProduct("Book 1", "10$", '900');
           echo $book1->getProduct("book1");
