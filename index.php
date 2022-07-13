@@ -51,6 +51,9 @@ require_once 'classes/BookProduct.php';
 //        $book1 = new Product("Book 1", "10$");
     $book1 = new BookProduct("Book 1", "10$", '900');
           echo $book1->getProduct("book1");
+
+//          $product = new Product('dasd', 11); // DOESNT WORK IF CLASS IS ABSTRACT)
+
     ?>
 </body>
 </html>

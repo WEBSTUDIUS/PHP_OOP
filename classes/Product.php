@@ -1,6 +1,6 @@
 <?php
 
-class Product {
+abstract class Product { //made class ABSTRACTED
 
     public $name;
     public $price;
