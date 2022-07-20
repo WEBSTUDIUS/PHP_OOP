@@ -1,11 +1,38 @@
 <?php
 
-require_once 'classes/Car.php';
-require_once 'classes/Debug.php';
-require_once 'classes/File.php';
-require_once 'classes/Product.php';
-require_once 'classes/NotebookProduct.php';
-require_once 'classes/BookProduct.php';
+use classes\Car;
+use classes\File;
+use classes\interfaces\IGadget;
+use classes\interfaces\I3D;
+use classes\NotebookProduct;
+use classes\BookProduct;
+
+error_reporting(E_ALL);
+//require_once 'classes/Car.php';
+//require_once 'classes/Debug.php';
+//require_once 'classes/File.php';
+//
+//require_once 'classes/I3D.php';
+//require_once 'classes/IGadget.php';
+//require_once 'classes/Product.php';
+//
+//require_once 'classes/NotebookProduct.php';
+//require_once 'classes/BookProduct.php';    // ITS CAN BE REMOVED BECAUSE AUTOLOADER
+
+require_once 'vendor/autoload.php';
+
+//function autoloader($class)
+//{
+//
+//    $class = str_replace("\\", "/", $class);
+//    $file = __DIR__. "/{$class}.php";
+//
+//    if(file_exists($file)) {
+//        require_once $file;
+//    }
+//}
+//spl_autoload_register('autoloader');  // DISABLED BECAUSE COMPOSER AUTOLOAD INSTALLED
+
 
 ?>
 <!DOCTYPE html>
@@ -38,20 +65,28 @@ require_once 'classes/BookProduct.php';
     <hr>
     <h1>MY PRODUCTS</h1>
     <?
+
+    function caseOffer(IGadget $product) {
+        echo "<p>Take this Case for Your {$product->getName()}</p>";
+    }
+
 //        $notebook = new Product("MacBook Pro 16", "1000$", "Intel Core i7-11654"); // Not for MAIN class
 //        $notebook = new Product("MacBook Pro 16", "1000$");
-    $notebook = new NotebookProduct("MacBook Pro 16", "1000$", 'Intel');
+    $notebook = new NotebookProduct("MacBook Pro 16", "1000", 'Intel');
+    $notebook->setColor("gray");
+
         echo $notebook->getProduct("notebook");
 //        $notebook->dicount = 50; // DOESNT WORK )
 //    $notebook->setDiscount(100); // DOESNT WORK )
-
+        $notebook->test();
 //    Debug::printer($notebook);
+    caseOffer($notebook);
 
 //        $book1 = new Product("Book 1", "10$", false ,"900");   // Not for MAIN class
 //        $book1 = new Product("Book 1", "10$");
-    $book1 = new BookProduct("Book 1", "10$", '900');
+    $book1 = new BookProduct("Book 1", "10", '900');
           echo $book1->getProduct("book1");
-
+//    caseOffer($book1); // DOESNT WORK BECAUSE NOT IMPLEMENTES IGADGET)
 //          $product = new Product('dasd', 11); // DOESNT WORK IF CLASS IS ABSTRACT)
 
     ?>

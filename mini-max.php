@@ -26,3 +26,5 @@ $arr_temp = rtrim("1 3 6 1 6");
 $arr = array_map('intval', preg_split('/ /', $arr_temp, -1, PREG_SPLIT_NO_EMPTY));
 
 miniMaxSum($arr);
+
+(int) ((0.1+0.7)*10);

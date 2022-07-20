@@ -1,6 +1,9 @@
 <?php
 
+namespace classes;
 abstract class Product { //made class ABSTRACTED
+
+
 
     public $name;
     public $price;
@@ -34,7 +37,7 @@ abstract class Product { //made class ABSTRACTED
             return "<hr><b>About Product #" . self::$i++ ."</b><br>
                 Name: " . $this->name . "<br>
                 Discount Price: " . $this->getPrice() . "$<br>
-                Old Price: " . $this->price . "<br>
+                Old Price: " . $this->price . "$<br>
                 Discount: " . $this->getDiscount() . "%<br>";
 
 
